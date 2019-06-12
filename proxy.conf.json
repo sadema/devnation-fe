@@ -1,0 +1,31 @@
+{
+  "/resource/*": {
+    "target": "http://localhost:7000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/resource": ""
+    }
+  },
+  "/api/*": {
+    "target": "http://localhost:7001",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/oauth2/*": {
+    "target": "http://localhost:7001",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/login/oauth2/*": {
+    "target": "http://localhost:7001",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
