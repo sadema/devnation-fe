@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -9,10 +9,8 @@ export class DevnationService {
 
   constructor(private http:HttpClient) { }
 
-  getDetails():Observable<any> {
-    // return this.http.get('/resource/message',{observe: 'response'});
-    return this.http.get('/api/message',{observe: 'response'});
-
-    // return this.http.get('http://localhost:8005/auth/realms/demo/.well-known/openid-configuration');
+  getDetails(uri:string):Observable<any> {
+    // return this.http.get(uri,{observe: 'response'});
+    return this.http.get(uri);
   }
 }

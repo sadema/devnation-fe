@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {DevnationService} from "./devnation.service";
 import {Observable} from "rxjs";
 
@@ -14,8 +14,8 @@ export class AppComponent {
   constructor(private devnationService:DevnationService) {
   }
 
-  click() {
-    this.details$ = this.devnationService.getDetails();
+  click(uri:string) {
+    this.details$ = this.devnationService.getDetails(uri);
   }
 
   ngOnInit() {

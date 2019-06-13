@@ -1,5 +1,10 @@
 <section>
   <h1>Page</h1>
-  <button mat-button (click)="click()">Click me...</button>
-  <p>{{details$ | async | json}}</p>
+  <button mat-button (click)="click('/api/message')">message</button>
+  <button mat-button (click)="click('/api/message/access-token')">access token</button>
+  <button mat-button (click)="click('/api/message/access-token-scopes')">access token scopes</button>
+  <button mat-button (click)="click('/api/message/token-principal-details')">token principal details</button>
+  <button mat-button (click)="click('/api/message/principal-name')">principal name</button>
+  <button mat-button (click)="click('/api/message/granttype')">granttype</button>
+  <p *ngIf="(details$ | async)">{{details$ | async | json}}</p>
 </section>
