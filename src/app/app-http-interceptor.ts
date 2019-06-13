@@ -1,15 +1,7 @@
-import {
-  HttpErrorResponse,
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest,
-  HttpResponse
-} from "@angular/common/http";
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable, throwError} from "rxjs";
-import {catchError, map} from "rxjs/operators";
-import {doesNotThrow} from "assert";
+import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
@@ -19,7 +11,6 @@ export class AppHttpInterceptor implements HttpInterceptor {
     return next.handle(req)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          console.log(error);
           if (error.status == 401 || error.status == 403) {
             window.location.href =`/api/login?uri=${error.url}`;
           }

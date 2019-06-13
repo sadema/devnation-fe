@@ -16,15 +16,6 @@ export class AppComponent {
 
   click() {
     this.details$ = this.devnationService.getDetails();
-      // .subscribe(resp => {
-      //   console.log("status: " + resp.status);
-      //   if (resp.status === 401) {
-      //     window.location.href = '/api/oauth2/authorization/keycloak';
-      //   } else {
-      //     console.log(resp.body);
-      //     this.details = resp.body;
-      //   }
-      // });
   }
 
   ngOnInit() {
